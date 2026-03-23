@@ -2,21 +2,20 @@
  * Nama File    : Persegi.java
  * Deskripsi    : berisi class utama untuk menjalankan Persegi
  * Pembuat      : Muhammad Hafidh Al-Ghifari
- * Tanggal      : 10 Maret 2026
+ * Tanggal      : 17 Maret 2026
  */
-public class Persegi extends BangunDatar implements IResize {
+
+public class Persegi extends BangunDatar implements IResize{
+    /* ATRIBUT */
     private double sisi;
 
+    /* METHOD */
     public Persegi() {
-        this.sisi = 0;
-    }
-
-    public Persegi(double sisi) {
-        this.sisi = sisi;
+        setJmlSisi(4);
     }
 
     public Persegi(double sisi, String warna, String border) {
-        super(warna, border);
+        super(4,warna, border);
         this.sisi = sisi;
     }
 
@@ -28,14 +27,22 @@ public class Persegi extends BangunDatar implements IResize {
         this.sisi = sisi;
     }
 
-    @Override
     public double getLuas() {
         return sisi * sisi;
     }
 
-    @Override
     public double getKeliling() {
-        return 4 * sisi;
+        return sisi * 4;
+    }
+
+    public double getDiagonal() {
+        return Math.sqrt(2) * sisi;
+    }
+
+    @Override
+    public void printInfo() {
+        super.printInfo();
+        System.out.println("Sisi: " + sisi);
     }
 
     @Override
@@ -50,14 +57,6 @@ public class Persegi extends BangunDatar implements IResize {
 
     @Override
     public void zoom(int percent) {
-        sisi = sisi * percent / 100.0;
-    }
-
-    public void printInfo() {
-        super.printInfo();
-        System.out.println("Jenis     : Persegi");
-        System.out.println("Sisi      : " + sisi);
-        System.out.println("Luas      : " + getLuas());
-        System.out.println("Keliling  : " + getKeliling());
+        sisi = sisi * percent / 100;
     }
 }

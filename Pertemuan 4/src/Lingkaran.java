@@ -4,46 +4,60 @@
  * Pembuat      : Muhammad Hafidh Al-Ghifari
  * Tanggal      : 10 Maret 2026
  */
-public class Lingkaran extends BangunDatar{
-    private double jari;
+public class Lingkaran extends BangunDatar implements IResize {
+    private double jariJari;
 
     public Lingkaran() {
-        setJmlSisi(1);
+        this.jariJari = 0;
     }
 
-    // public  Lingkaran (double diameter, String warna, String border) {
-    //     this.jari = diameter / 2;
-    //     setWarna(warna);
-    //     setBorder(border);
-    //     setJmlSisi(1);
-    // }
-
-    public Lingkaran(double diameter, String warna, String border) {
-        super(1, warna, border);
-        this.jari = diameter / 2;
+    public Lingkaran(double jariJari) {
+        this.jariJari = jariJari;
     }
 
-    public double getJari() {
-        return jari;
+    public Lingkaran(double jariJari, String warna, String border) {
+        super(warna, border);
+        this.jariJari = jariJari;
     }
 
-    public void setJari(double jari) {
-        this.jari = jari;
+    public double getJariJari() {
+        return jariJari;
     }
 
-    public double getLuas() {
-        return Math.PI * jari * jari;
-    }
-
-    public double getKeliling() {
-        return 2 * Math.PI * jari;
+    public void setJariJari(double jariJari) {
+        this.jariJari = jariJari;
     }
 
     @Override
+    public double getLuas() {
+        return Math.PI * jariJari * jariJari;
+    }
+
+    @Override
+    public double getKeliling() {
+        return 2 * Math.PI * jariJari;
+    }
+
+    @Override
+    public void zoomIn() {
+        jariJari = jariJari * 1.1;
+    }
+
+    @Override
+    public void zoomOut() {
+        jariJari = jariJari * 0.9;
+    }
+
+    @Override
+    public void zoom(int percent) {
+        jariJari = jariJari * percent / 100.0;
+    }
+
     public void printInfo() {
-        System.out.println("Jumlah Sisi: " + getJmlSisi());
-        System.out.println("Warna: " + getWarna());
-        System.out.println("Border: " + getBorder());
-        System.out.println("Jari-jari: " + jari);
+        super.printInfo();
+        System.out.println("Jenis     : Lingkaran");
+        System.out.println("Jari-jari : " + jariJari);
+        System.out.println("Luas      : " + getLuas());
+        System.out.println("Keliling  : " + getKeliling());
     }
 }

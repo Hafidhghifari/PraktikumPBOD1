@@ -1,7 +1,7 @@
 /*
 Nama File   : Pengusaha.java
 Deskripsi   : Berisi atribut dan method dalam class pengusaha
-Pembuat     : Muhammad Hafidh Al-Ghifari
+Pembuat     : Muhammad Hafidh Al-Ghifari/24060124140133
 Tanggal     : 20 Maret 2026
 */
 
@@ -41,7 +41,7 @@ public class Pengusaha extends Manusia implements Pajak {
 
     @Override
     public int hitungMasaKerja() {
-        return Period.between(tgl_mulai, LocalDate.now()).getYears() + 2;
+        return Period.between(tgl_mulai, LocalDate.now()).getYears() + 3;
     }
 
     @Override

@@ -1,7 +1,7 @@
 /*
 Nama File   : Manusia.java
 Deskripsi   : Berisi atribut dan method dalam class manusia
-Pembuat     : Muhammad Hafidh Al-Ghifari
+Pembuat     : Muhammad Hafidh Al-Ghifari/24060124140133
 Tanggal     : 20 Maret 2026
 */
 package Latihan;
